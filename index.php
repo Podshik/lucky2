@@ -6,9 +6,8 @@
 </head>
 <body>
 <ul>
-    <li>Hello World!!!</li>
+    <li>Dont worry</li>
 </ul>
-<h1>Hello World</h1>
-<p>Dont worry </p>
+<h1>Be happy!</h1>
 </body>
 </html>
