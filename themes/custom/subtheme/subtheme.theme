@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Bootstrap sub-theme.
+ *
+ * Place your custom PHP code in this file.
+ */
+function subtheme_preprocess_node(&$variables){
+
+	$a = $variables['node']->getType();
+
+		if ($a == 'music' ) {
+
+		$variables['title_attributes']['class'][] = 'text-field-new';
+		
+		}
+
+	$user_ip = \Drupal::request()->getClientIp();
+	$variables['user_ip'] =  $user_ip;
+		
+		// kint($variables);
+		// die();
+}

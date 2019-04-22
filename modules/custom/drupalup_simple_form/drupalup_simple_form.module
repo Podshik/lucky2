@@ -1,0 +1,43 @@
+<?php
+/**
+ * Implements hook_mail_alter().
+ */
+function drupalup_simple_form_mail_alter(&$message){
+//    kint($message);
+//    die();
+    switch ($message['key']) {
+        case 'sonic_form_email':
+            $message['headers']['From'] = 'Hello@World';
+            $message['to'] = 'site@name';
+
+            break;
+    }
+}
+function drupalup_simple_form_views_query_alter($view, $query){
+  if ($view->id() == 'aura' ) {
+    $query->addwhere('1', 'node_field_data.title', '%Official%', 'LIKE');
+
+  }
+//    $query->where['1']['conditions'] [] = [
+//      'field' => 'node_field_data.title',
+//      'value' => '%Official%',
+//      'operator' => 'LIKE',
+//    ];
+
+//kint($query);
+//die();
+}
+ /**
+   * Implements hook_theme()
+   */
+ function node__music_theme(){
+ 	return [
+ 		'node__music' => [
+ 		'variables' => [
+ 		'user_ip' => NULL,
+ 		],	
+ 	  ],
+
+ 	];
+
+ }
